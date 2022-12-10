@@ -1,5 +1,7 @@
+import Hero from '../components/Hero'
 import Nav from '../components/Nav'
 import ProductList from '../components/ProductList'
+import UnderlineLink from '../components/UnderlineLink'
 import { getProductsInCollection } from '../lib/shopify'
 
 
@@ -7,7 +9,8 @@ import { getProductsInCollection } from '../lib/shopify'
 export default function Home({ products }) {
   return (
    <div>
-
+<Hero/>
+{/* <UnderlineLink/> */}
 
 <ProductList products={products} />
 

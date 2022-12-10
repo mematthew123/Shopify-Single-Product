@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import ProductForm from './ProductForm'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Navigation, Pagination } from 'swiper'
+import Image from "next/image";
+import ProductForm from "./ProductForm";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 
 export default function SingleProduct({ product }) {
-  const images = []
+  const images = [];
 
   product.images.edges.map((image, i) => {
     images.push(
@@ -16,10 +16,10 @@ export default function SingleProduct({ product }) {
           objectFit="cover"
         />
       </SwiperSlide>
-    )
-  })
+    );
+  });
 
-  SwiperCore.use([Navigation, Pagination])
+  SwiperCore.use([Navigation, Pagination]);
 
   return (
     <div>
@@ -27,7 +27,10 @@ export default function SingleProduct({ product }) {
         <div className="w-full max-w-md border bg-white rounded-2xl overflow-hidden shadow-lg md:w-1/2">
           <div className="relative h-96 w-full">
             <Swiper
-              style={{ '--swiper-navigation-color': '#000', '--swiper-pagination-color': '#000' }}
+              style={{
+                "--swiper-navigation-color": "#000",
+                "--swiper-pagination-color": "#000",
+              }}
               navigation
               pagination={{ clickable: true }}
               className="h-96 rounded-2xl"
@@ -43,5 +46,5 @@ export default function SingleProduct({ product }) {
         {product.description}
       </p>
     </div>
-  )
+  );
 }
